@@ -1,15 +1,10 @@
-TW.Runtime.Widgets.infotableinspector = function () {
-	var valueElem;
-	var rowCount = 0;
+TW.Runtime.Widgets.CopyToClipboardWidgetTwx = function () {
+
 	this.renderHtml = function () {
-		return '<div class="widget-content widget-infotableinspector" style="display:none;"></div>';
+		return '<div class="widget-content widget-copytoclipboardwidgettwx" style="display:none;"></div>';
 	};
 
 	this.afterRender = function () {
-		this.setProperty('RowCount', rowCount);
-		this.setProperty('IsEmpty', rowCount < 1);
-		this.setProperty('HasRows', rowCount > 0);
-
 		// if we never show at runtime, we should hide ourselves completely - Safari and Firefox will show scrollbars if the container is too narrow / short
 		this.jqElement.hide();
 		this.jqElement.closest('.widget-bounding-box').hide();
@@ -31,31 +26,19 @@ TW.Runtime.Widgets.infotableinspector = function () {
 		// TargetProperty tells you which of your bound properties changed
 		if (updatePropertyInfo.TargetProperty === 'Data') {
 			this.setProperty('Data', updatePropertyInfo.SinglePropertyValue);
-			var dataRows = updatePropertyInfo.ActualDataRows;
-			rowCount = dataRows.length;
-			this.setProperty('RowCount', rowCount);
-			this.setProperty('IsEmpty', rowCount < 1);
-			this.setProperty('HasRows', rowCount > 0);
-
 		} else {
-			TW.log.error('infotableinspector widget, unexpected property update received "' + updatePropertyInfo.TargetProperty + '"');
+			TW.log.error('copytoclipboardwidgettwx widget, unexpected property update received "' + updatePropertyInfo.TargetProperty + '"');
 		}
 	};
 
 	this.serviceInvoked = function (serviceName) {
 		switch (serviceName) {
-			case 'ClearSelectedRows':
-				this.updateSelection('Data', []);
-				break;
-			case 'SelectAllRows':
-				var list = [];
-				for (var i = 0; i < rowCount; i++) {
-					list.push(i);
-				}
-				this.updateSelection('Data', list);
+			case 'CopyToClipboard':
+				let data = this.getProperty('Data');
+				navigator.clipboard.writeText(data);
 				break;
 			default:
-				TW.log.error('infotableinspector widget, unexpected serviceName invoked "' + serviceName + '"');
+				TW.log.error('copytoclipboardwidgettwx widget, unexpected serviceName invoked "' + serviceName + '"');
 		}
 	};
 };

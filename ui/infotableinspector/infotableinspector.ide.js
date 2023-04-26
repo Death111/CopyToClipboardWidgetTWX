@@ -1,12 +1,12 @@
-TW.IDE.Widgets.infotableinspector = function () {
+TW.IDE.Widgets.CopyToClipboardWidgetTwx = function () {
 
 	this.widgetIconUrl = function () {
-		return '../Common/extensions/InfotableInspectorWiget/ui/infotableinspector/default_widget_icon.ide.png';
+		return '../Common/extensions/CopyToClipboardWidgetTwx/ui/copytoclipboardwidgettwx/default_widget_icon.ide.png';
 	};
 
 	this.widgetProperties = function () {
 		return {
-			'name': 'InfotableInspector',
+			'name': 'Clipboard',
 			'description': '',
 			'category': ['Common'],
 			'properties': {
@@ -14,26 +14,8 @@ TW.IDE.Widgets.infotableinspector = function () {
 					'description': 'Infotable to inspect',
 					'isBindingTarget': true,
 					'isEditable': false,
-					'baseType': 'INFOTABLE',
+					'baseType': 'STRING',
 					'warnIfNotBoundAsTarget': true
-				},
-				'RowCount': {
-					'description': 'Returns the row count of the given infotable',
-					'isBindingSource': true,
-					'isEditable': false,
-					'baseType': 'INTEGER'
-				},
-				'IsEmpty': {
-					'description': 'Returns true if row count is zero',
-					'isBindingSource': true,
-					'isEditable': false,
-					'baseType': 'BOOLEAN'
-				},
-				'HasRows': {
-					'description': 'Returns true if row count is greater 0',
-					'isBindingSource': true,
-					'isEditable': false,
-					'baseType': 'BOOLEAN'
 				}
 			}
 		}
@@ -41,8 +23,7 @@ TW.IDE.Widgets.infotableinspector = function () {
 
 	this.widgetServices = function () {
 		return {
-			'ClearSelectedRows': { 'warnIfNotBound': false },
-			'SelectAllRows': { 'warnIfNotBound': false }
+			'CopyToClipboard': { 'warnIfNotBound': true }
 		};
 	};
 
@@ -75,8 +56,8 @@ TW.IDE.Widgets.infotableinspector = function () {
 		// return any HTML you want rendered for your widget
 		// If you want it to change depending on properties that the user
 		// has set, you can use this.getProperty(propertyName).
-		return '<div class="widget-content widget-infotableinspector">' +
-			'<span class="infotableinspector-property">' + this.properties.DisplayName + " - invisible @ runtime" + '</span>' +
+		return '<div class="widget-content widget-copytoclipboardwidgettwx">' +
+			'<span class="copytoclipboardwidgettwx-property">' + this.properties.DisplayName + " - invisible @ runtime" + '</span>' +
 			'</div>';
 	};
 
@@ -84,7 +65,7 @@ TW.IDE.Widgets.infotableinspector = function () {
 		// NOTE: this.jqElement is the jquery reference to your html dom element
 		// 		 that was returned in renderHtml()
 		// get a reference to the value element
-		valueElem = this.jqElement.find('.infotableinspector-property');
+		valueElem = this.jqElement.find('.copytoclipboardwidgettwx-property');
 	};
 
 };
