@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entities>
     <ExtensionPackages>
-        <ExtensionPackage dependsOn="" description="Widget can tell you about the rows of an infotable" minimumThingWorxVersion="8.0.0" name="CopyToClipboardWidgetTwx" packageVersion="1.0.17" buildNumber="" vendor="doubleSlash Net-Business GmbH"> 
+        <ExtensionPackage dependsOn="" description="Widget offers a copy to clipboard action" minimumThingWorxVersion="8.0.0" name="CopyToClipboardWidgetTwx" packageVersion="1.0.17" buildNumber="" vendor="doubleSlash Net-Business GmbH"> 
         </ExtensionPackage>
     </ExtensionPackages>
     <Widgets>
-        <Widget name="CopyToClipboardWidgetTwx">
+        <Widget name="copytoclipboardwidgettwx">
             <UIResources>
                 <FileResource description="" file="copytoclipboardwidgettwx.ide.js" isDevelopment="true" isRuntime="false" type="JS"/>
                 <FileResource description="" file="copytoclipboardwidgettwx.ide.css" isDevelopment="true" isRuntime="false" type="CSS"/>
