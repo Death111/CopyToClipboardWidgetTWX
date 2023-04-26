@@ -5,7 +5,7 @@ ThingWorx widget binds to a string input property and offers a "copy to clipboar
 ## Configuration
 ### Designtime
 - Mashup  Builder
-![Alt text](/readme/copyToClipboardWidgetTwx_builder.PNG.png?raw=true "Mashup Builder")
+![Alt text](/readme/copyToClipboardWidgetTwx_builder.PNG?raw=true "Mashup Builder")
 
 ### Runtime
 - invisible
