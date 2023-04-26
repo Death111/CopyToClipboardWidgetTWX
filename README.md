@@ -1,20 +1,11 @@
-# InfotableInspectorWidgetTWX
+# CopyToClipboardWidgetTwx
 
-ThingWorx widget can bind to a InfoTable and provides useful information which would need service calls to the backend otherwise.
-
-Features:
-* Row Count
-* Is Empty
-* Has Rows
-* Select All Rows
-* Clear Selected Rows
+ThingWorx widget binds to a string input property and offers a "copy to clipboard" service.
 
 ## Configuration
 ### Designtime
-- Properties  
-![Alt text](/readme/properties.png?raw=true "Bindable Properties")
 - Mashup  Builder
-![Alt text](/readme/ide.png?raw=true "Mashup Builder")
+![Alt text](/readme/copyToClipboardWidgetTwx_builder.PNG.png?raw=true "Mashup Builder")
 
 ### Runtime
 - invisible

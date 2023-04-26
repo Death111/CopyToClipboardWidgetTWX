@@ -6,8 +6,8 @@ TW.IDE.Widgets.CopyToClipboardWidgetTwx = function () {
 
 	this.widgetProperties = function () {
 		return {
-			'name': 'Clipboard',
-			'description': '',
+			'name': 'CopyToClipboardWidgetTwx',
+			'description': 'Offers a copy to clipboard service',
 			'category': ['Common'],
 			'properties': {
 				'Data': {
